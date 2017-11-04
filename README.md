@@ -1,6 +1,6 @@
 # Eve
 
-**TODO: Add description**
+Simple, limited local Docker remote API wrapper, written for [ribbon](https://ribbon.sh).
 
 ## Installation
 
