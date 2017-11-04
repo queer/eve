@@ -34,7 +34,7 @@ defmodule Eve do
     get("/images/#{image}/history")
   end
 
-  def pull(image, tag \\ latest) do
+  def pull(image, tag \\ "latest") do
     post("/images/create?fromImage=#{image}&tag=#{tag}")
   end
 end
