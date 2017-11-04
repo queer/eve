@@ -1,6 +1,10 @@
 defmodule Eve do
   @docker_url "http+unix://" <> URI.encode_www_form("/var/run/docker.sock")
 
+  def docker_url do
+    @docker_url
+  end
+
   defp default_headers do
     {:ok, hostname} = :inet.gethostname
     %{"Content-Type" => "application/json", "Host" => hostname}
