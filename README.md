@@ -4,18 +4,12 @@ Simple, limited local Docker remote API wrapper, written for [ribbon](https://ri
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `eve` to your list of dependencies in `mix.exs`:
+Add the following to your mix.exs:
 
 ```elixir
 def deps do
   [
-    {:eve, "~> 0.1.0"}
+    {:eve, github: "queer/eve"}
   ]
 end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/eve](https://hexdocs.pm/eve).
-
