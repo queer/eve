@@ -34,6 +34,9 @@ defmodule Eve do
     get("/images/#{image}/history")
   end
 
+  @doc """
+  Synchronous image pull. Probably not what you want, but included here anyway 
+  """
   def pull(image, tag \\ "latest") do
     post("/images/create?fromImage=#{image}&tag=#{tag}")
   end
