@@ -12,6 +12,13 @@ defmodule Eve do
     |> handle_decode
   end
 
+  def post(resource, data \\ "", headers \\ default_headers) do
+    data = Poison.encode! data
+    @docker_url <> resource
+    |> HTTPoison.post!(data, headers, [])
+    |> handle_decode
+  end
+
   defp handle_decode(%HTTPoison.Response{body: body}) do
     case Poison.decode(body) do
       {:ok, dict} -> dict
@@ -25,5 +32,9 @@ defmodule Eve do
 
   def get_history(image) do
     get("/images/#{image}/history")
+  end
+
+  def pull(image, tag) do
+    post("")
   end
 end
