@@ -1,5 +1,5 @@
 defmodule Eve do
-  @docker_url "http+unix://" <> URI.encode_www_form("/var/run/docker.sock")
+  @docker_url "http+unix://" <> URI.encode_www_form("/var/run/docker.sock") <> "/v1.18"
 
   def docker_url do
     @docker_url
@@ -43,5 +43,9 @@ defmodule Eve do
   """
   def pull(image, tag \\ "latest") do
     post("/images/create?fromImage=#{image}&tag=#{tag}")
+  end
+
+  def get_containers do
+    get("/containers/json?all=1&size=1")
   end
 end
