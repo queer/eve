@@ -46,6 +46,6 @@ defmodule Eve do
   end
 
   def get_containers do
-    get("/containers/json?all=1&size=1")
+    get("/containers/json?all=1")
   end
 end
